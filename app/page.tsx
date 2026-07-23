@@ -202,15 +202,8 @@ export default function Home() {
 
       <section className="choose section" id="choose">
         <figure className="course-map">
-          <div className="course-map-copy">
-            <p className="eyebrow ink"><span aria-hidden="true">✦</span> A closer look at the course</p>
-            <h3>Six miles around<br />Burke Lake.</h3>
-            <p>The 10K circles the lake, with the start and finish at Shelter A. Save it now so race morning feels easy.</p>
-          </div>
-          <div className="course-map-art">
-            <img src="/images/burke-lake-10k-course-map.png" alt="Illustrated Burke Lake 10K route map with start, finish, parking, and mile markers" loading="lazy" />
-            <span className="course-map-caption"><span aria-hidden="true">●</span> Course illustration · 10K route preview</span>
-          </div>
+          <figcaption>Course map</figcaption>
+          <img src="/images/burke-lake-10k-course-map.png" alt="Illustrated Burke Lake 10K route map with start, finish, parking, and mile markers" loading="lazy" />
         </figure>
         <div className="section-heading centered">
           <p className="eyebrow ink"><span aria-hidden="true">01</span> Pick your way to show up</p>
