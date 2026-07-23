@@ -202,7 +202,6 @@ export default function Home() {
 
       <section className="choose section" id="choose">
         <figure className="course-map">
-          <figcaption>Course map</figcaption>
           <img src="/images/burke-lake-10k-course-map.png" alt="Illustrated Burke Lake 10K route map with start, finish, parking, and mile markers" loading="lazy" />
         </figure>
         <div className="section-heading centered">
