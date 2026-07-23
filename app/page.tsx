@@ -94,6 +94,7 @@ function getCountdown() {
     days: Math.floor(remaining / 86_400_000),
     hours: Math.floor((remaining / 3_600_000) % 24),
     minutes: Math.floor((remaining / 60_000) % 60),
+    seconds: Math.floor((remaining / 1_000) % 60),
   };
 }
 
@@ -113,7 +114,7 @@ export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   useEffect(() => {
-    const timer = window.setInterval(() => setCountdown(getCountdown()), 60_000);
+    const timer = window.setInterval(() => setCountdown(getCountdown()), 1_000);
     const eventNoteTimer = window.setTimeout(() => setShowEventNote(true), 9_000);
     return () => {
       window.clearInterval(timer);
@@ -180,10 +181,14 @@ export default function Home() {
           </div>
         </div>
         <div className="countdown" aria-label="Countdown to the race">
-          <span className="countdown-label">Race day is coming</span>
-          <div><b>{String(countdown.days).padStart(2, "0")}</b><span>days</span></div>
-          <div><b>{String(countdown.hours).padStart(2, "0")}</b><span>hours</span></div>
-          <div><b>{String(countdown.minutes).padStart(2, "0")}</b><span>minutes</span></div>
+          <div className="countdown-intro">
+            <span className="countdown-kicker">August 15 · Burke Lake Park</span>
+            <span className="countdown-label">Race day is coming</span>
+          </div>
+          <div className="countdown-unit"><b>{String(countdown.days).padStart(2, "0")}</b><span>days</span></div>
+          <div className="countdown-unit"><b>{String(countdown.hours).padStart(2, "0")}</b><span>hours</span></div>
+          <div className="countdown-unit"><b>{String(countdown.minutes).padStart(2, "0")}</b><span>minutes</span></div>
+          <div className="countdown-unit countdown-seconds"><b>{String(countdown.seconds).padStart(2, "0")}</b><span>seconds</span></div>
           <button onClick={() => openRegistration()}>Save your place <span aria-hidden="true">→</span></button>
         </div>
       </section>
@@ -196,6 +201,17 @@ export default function Home() {
       </section>
 
       <section className="choose section" id="choose">
+        <figure className="course-map">
+          <div className="course-map-copy">
+            <p className="eyebrow ink"><span aria-hidden="true">✦</span> A closer look at the course</p>
+            <h3>Six miles around<br />Burke Lake.</h3>
+            <p>The 10K circles the lake, with the start and finish at Shelter A. Save it now so race morning feels easy.</p>
+          </div>
+          <div className="course-map-art">
+            <img src="/images/burke-lake-10k-course-map.png" alt="Illustrated Burke Lake 10K route map with start, finish, parking, and mile markers" loading="lazy" />
+            <span className="course-map-caption"><span aria-hidden="true">●</span> Course illustration · 10K route preview</span>
+          </div>
+        </figure>
         <div className="section-heading centered">
           <p className="eyebrow ink"><span aria-hidden="true">01</span> Pick your way to show up</p>
           <h2>A race for every kind of <em>royal.</em></h2>

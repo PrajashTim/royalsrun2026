@@ -64,12 +64,18 @@ h1 em, h2 em { font-family: var(--serif); font-weight: 400; letter-spacing: -.07
 .hero-flyer { display: block; width: 100%; border: 8px solid #f7f6f0; box-shadow: -26px 28px 0 rgba(0,0,0,.16), 0 26px 55px rgba(0,0,0,.4); }
 .flyer-caption { position: absolute; bottom: -35px; left: -49px; right: -49px; padding: 12px 16px; color: var(--ink); background: var(--sun); box-shadow: 0 12px 23px rgba(1,18,57,.28); font-size: 11px; font-weight: 900; letter-spacing: .045em; text-align: center; text-transform: uppercase; transform: rotate(-6deg); }
 .flyer-caption span { margin-right: 5px; }
-.countdown { position: absolute; z-index: 2; bottom: 0; left: 50%; width: min(1090px, calc(100% - 88px)); min-height: 105px; display: flex; align-items: center; gap: 27px; padding: 19px 26px; color: var(--ink); background: #fffdf8; transform: translateX(-50%); box-shadow: 0 11px 42px rgba(0,0,0,.18); }
-.countdown-label { width: 168px; font-size: 11px; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
-.countdown > div { display: flex; min-width: 69px; flex-direction: column; align-items: center; border-left: 1px solid #dae0e9; }
-.countdown b { font-size: 27px; line-height: 1; }
-.countdown div span { margin-top: 6px; color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
-.countdown button { margin-left: auto; border: 0; background: none; color: var(--blue); font-size: 12px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+.countdown { position: absolute; z-index: 2; bottom: 0; left: 50%; width: min(1130px, calc(100% - 88px)); min-height: 118px; display: flex; align-items: stretch; gap: 0; padding: 8px; color: var(--ink); background: rgba(255,253,248,.96); border: 1px solid rgba(255,255,255,.45); border-top: 4px solid var(--sun); border-radius: 8px 8px 0 0; transform: translateX(-50%); box-shadow: 0 18px 48px rgba(0,0,0,.24); backdrop-filter: blur(12px); }
+.countdown-intro { width: 214px; display: flex; flex-direction: column; justify-content: center; padding: 16px 22px; background: var(--ink); color: #fff; }
+.countdown-kicker { margin-bottom: 7px; color: #93bdf3; font-size: 9px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.countdown-label { font-size: 13px; font-weight: 900; letter-spacing: .1em; line-height: 1.3; text-transform: uppercase; }
+.countdown-unit { min-width: 82px; display: flex; flex: 1 1 0; flex-direction: column; align-items: center; justify-content: center; margin: 10px 0; border-left: 1px solid #dfe4eb; }
+.countdown-intro + .countdown-unit { border-left: 0; }
+.countdown b { min-width: 2.05ch; color: var(--ink); font-size: 34px; line-height: .9; letter-spacing: -.06em; text-align: center; font-variant-numeric: tabular-nums; }
+.countdown-unit span { margin-top: 8px; color: var(--muted); font-size: 9px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.countdown-seconds b { color: var(--blue); }
+.countdown-seconds span { color: var(--blue); }
+.countdown button { min-width: 145px; margin: 8px 0 8px 12px; padding: 0 17px; border: 0; background: var(--sun); color: var(--ink); font-size: 11px; font-weight: 900; letter-spacing: .08em; line-height: 1.35; text-transform: uppercase; transition: background .2s ease, transform .2s ease; }
+.countdown button:hover { background: #ffd35c; transform: translateY(-1px); }
 
 .intro-strip { display: flex; justify-content: center; gap: 39px; padding: 38px 30px; background: #fff; color: var(--ink); }
 .intro-strip p { margin: 0; font-size: 12px; font-weight: 800; letter-spacing: .035em; text-transform: uppercase; }
@@ -79,6 +85,17 @@ h1 em, h2 em { font-family: var(--serif); font-weight: 400; letter-spacing: -.07
 .section-heading.centered { max-width: 700px; margin: auto; text-align: center; }
 .section-heading h2, .experience h2, .impact h2, .what-you-get h2, .registration-callout h2 { margin: 0; color: var(--ink); font-size: clamp(42px, 5vw, 70px); line-height: .98; font-weight: 900; }
 .section-heading > p:last-child { max-width: 520px; margin: 21px auto 0; color: var(--muted); font-size: 16px; line-height: 1.55; }
+.course-map { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 0; max-width: 860px; margin: 0 auto 88px; overflow: hidden; background: #fffdf8; border: 1px solid #e4e5e1; box-shadow: 0 21px 54px rgba(7,27,63,.1); }
+.course-map::before { content: ""; position: absolute; z-index: 0; width: 350px; height: 350px; left: -170px; bottom: -190px; border: 1px solid rgba(14,75,199,.15); border-radius: 50%; box-shadow: 0 0 0 28px rgba(14,75,199,.035), 0 0 0 62px rgba(14,75,199,.025); }
+.course-map-copy { position: relative; z-index: 1; display: flex; flex-direction: column; justify-content: center; padding: 58px 44px; color: var(--ink); background: linear-gradient(155deg, #f5f1e7, #fffdf8); }
+.course-map-copy .eyebrow { margin-bottom: 16px; }
+.course-map-copy h3 { margin: 0; font-size: clamp(35px, 3.2vw, 49px); line-height: .95; letter-spacing: -.065em; }
+.course-map-copy > p:last-child { margin: 23px 0 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
+.course-map-art { position: relative; min-height: 480px; overflow: hidden; background: #f8f5ef; }
+.course-map-art::after { content: "10K course preview"; position: absolute; top: 20px; right: 20px; padding: 8px 11px; color: #fff; background: var(--ink); font-size: 9px; font-weight: 900; letter-spacing: .11em; text-transform: uppercase; }
+.course-map-art img { display: block; width: 100%; height: 100%; min-height: 480px; object-fit: cover; object-position: center; }
+.course-map-caption { position: absolute; z-index: 2; right: 18px; bottom: 17px; color: var(--ink); font-size: 8px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+.course-map-caption span { margin-right: 5px; color: #ef6e7d; }
 .race-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 17px; margin-top: 56px; }
 .race-card { position: relative; min-height: 391px; display: flex; flex-direction: column; padding: 28px; overflow: hidden; border: 1px solid transparent; transition: transform .25s ease, box-shadow .25s ease; }
 .race-card:hover, .race-card.selected { transform: translateY(-6px); box-shadow: 0 16px 34px rgba(11,35,80,.15); }
@@ -210,6 +227,12 @@ footer p { margin: 0; text-align: right; text-transform: uppercase; }
   .hero-flyer-wrap { width: 94%; }
   .flyer-caption { left: -23px; right: -23px; font-size: 9px; }
   .countdown { width: calc(100% - 56px); }
+  .countdown-intro { width: 188px; padding-inline: 17px; }
+  .countdown-unit { min-width: 64px; }
+  .countdown button { min-width: 122px; padding-inline: 10px; }
+  .course-map { grid-template-columns: minmax(0, 1fr) 290px; }
+  .course-map-copy { padding: 42px 29px; }
+  .course-map-art, .course-map-art img { min-height: 435px; }
   .intro-strip { gap: 18px; flex-wrap: wrap; }
   .section { padding: 96px 28px; }
   .race-card { min-height: 370px; padding: 22px; }
@@ -241,17 +264,27 @@ footer p { margin: 0; text-align: right; text-transform: uppercase; }
   .hero-trust span { font-size: 9px; }
   .hero-flyer-wrap { width: 76%; margin: 53px auto 36px; }
   .flyer-caption { bottom: -28px; left: -30px; right: -30px; padding: 9px 7px; font-size: 8px; }
-  .countdown { position: static; width: 100%; min-height: 0; gap: 8px; padding: 13px 14px; transform: none; box-shadow: none; }
-  .countdown-label { width: 85px; font-size: 9px; line-height: 1.25; }
-  .countdown > div { min-width: 44px; }
-  .countdown b { font-size: 21px; }
-  .countdown div span { font-size: 8px; }
+  .countdown { position: static; width: 100%; min-height: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; padding: 7px; border-width: 3px 0 0; border-radius: 0; transform: none; box-shadow: none; }
+  .countdown-intro { grid-column: 1 / -1; width: auto; display: block; padding: 9px 10px 12px; text-align: center; }
+  .countdown-kicker { margin-bottom: 4px; font-size: 8px; }
+  .countdown-label { font-size: 10px; }
+  .countdown-unit { min-width: 0; margin: 4px 0; padding: 9px 1px; }
+  .countdown-unit:first-of-type { border-left: 0; }
+  .countdown b { font-size: 23px; }
+  .countdown-unit span { margin-top: 5px; font-size: 7px; }
   .countdown button { display: none; }
   .intro-strip { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 12px; padding: 24px 21px; }
   .intro-strip p { font-size: 10px; line-height: 1.45; }
   .section { padding: 75px 21px; }
   .section-heading h2, .experience h2, .impact h2, .what-you-get h2, .registration-callout h2 { font-size: 43px; }
   .section-heading > p:last-child { font-size: 14px; }
+  .course-map { display: flex; flex-direction: column-reverse; margin-bottom: 57px; }
+  .course-map-copy { padding: 35px 25px 38px; }
+  .course-map-copy h3 { font-size: 39px; }
+  .course-map-art, .course-map-art img { min-height: 0; }
+  .course-map-art img { height: auto; aspect-ratio: 2 / 3; object-fit: cover; }
+  .course-map-art::after { top: 13px; right: 13px; font-size: 8px; }
+  .course-map-caption { right: 13px; bottom: 13px; font-size: 7px; }
   .race-grid { grid-template-columns: 1fr; gap: 11px; margin-top: 34px; }
   .race-card { min-height: 292px; }
   .race-title { margin-top: 35px; }
