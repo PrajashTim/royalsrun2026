@@ -85,7 +85,7 @@ h1 em, h2 em { font-family: var(--serif); font-weight: 400; letter-spacing: -.07
 .section-heading.centered { max-width: 700px; margin: auto; text-align: center; }
 .section-heading h2, .experience h2, .impact h2, .what-you-get h2, .registration-callout h2 { margin: 0; color: var(--ink); font-size: clamp(42px, 5vw, 70px); line-height: .98; font-weight: 900; }
 .section-heading > p:last-child { max-width: 520px; margin: 21px auto 0; color: var(--muted); font-size: 16px; line-height: 1.55; }
-.course-map { width: min(100%, 520px); margin: 0 auto 88px; padding: 0; overflow: hidden; background: #050505; box-shadow: 0 21px 54px rgba(7,27,63,.16); }
+.course-map { width: min(100%, 1080px); margin: 0 auto 88px; padding: 0; overflow: hidden; background: #050505; box-shadow: 0 21px 54px rgba(7,27,63,.16); }
 .course-map figcaption { padding: 14px 18px; color: #fff; background: #050505; font-size: 10px; font-weight: 900; letter-spacing: .13em; text-align: center; text-transform: uppercase; }
 .course-map img { display: block; width: 100%; height: auto; }
 .race-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 17px; margin-top: 56px; }
