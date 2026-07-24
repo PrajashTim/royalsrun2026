@@ -56,7 +56,12 @@ test("keeps the event details and secure registration handoff in the product", a
   assert.match(page, /8:45 AM/);
   assert.match(page, /info\.royalsrun@gmail\.com/);
   assert.match(page, /RoyalsRunRegistrationIntent/);
+  assert.match(page, /InitiateCheckout/);
+  assert.match(page, /ViewContent/);
   assert.match(page, /role="dialog"/);
+  assert.match(layout, /meta-pixel/);
+  assert.match(layout, /1184245643739344/);
+  assert.match(layout, /PageView/);
   assert.match(layout, /metadataBase/);
   assert.match(layout, /og\.png/);
   assert.doesNotMatch(layout, /codex-preview|Starter Project|_sites-preview/);

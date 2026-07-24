@@ -101,8 +101,24 @@ function getCountdown() {
 function trackRegistrationIntent(race?: string) {
   const trackingWindow = window as Window &
     typeof globalThis & { fbq?: (...args: unknown[]) => void };
+  const selectedRace = races.find((item) => item.distance === race);
+  const eventDetails = {
+    content_category: "Event registration",
+    content_ids: [selectedRace?.distance ?? "Royals Run 2026"],
+    contents: [{ id: selectedRace?.distance ?? "Royals Run 2026", quantity: 1 }],
+    ...(selectedRace
+      ? {
+          currency: "USD",
+          value: Number.parseFloat(selectedRace.price.replace(/[^\d.]/g, "")),
+        }
+      : {}),
+  };
+
+  // Elitefeats owns the final form and payment confirmation. This records only
+  // the visitor's handoff from the Royals Run landing page to that form.
+  trackingWindow.fbq?.("track", "InitiateCheckout", eventDetails);
   trackingWindow.fbq?.("trackCustom", "RoyalsRunRegistrationIntent", {
-    race: race ?? "not selected",
+    race: selectedRace?.distance ?? "not selected",
   });
 }
 
@@ -116,6 +132,15 @@ export default function Home() {
   useEffect(() => {
     const timer = window.setInterval(() => setCountdown(getCountdown()), 1_000);
     const eventNoteTimer = window.setTimeout(() => setShowEventNote(true), 9_000);
+
+    const trackingWindow = window as Window &
+      typeof globalThis & { fbq?: (...args: unknown[]) => void };
+    trackingWindow.fbq?.("track", "ViewContent", {
+      content_category: "Event registration",
+      content_ids: ["Royals Run 2026"],
+      content_name: "Royals Run 2026 landing page",
+    });
+
     return () => {
       window.clearInterval(timer);
       window.clearTimeout(eventNoteTimer);
@@ -367,7 +392,7 @@ export default function Home() {
             </div>
             <div className="registration-progress"><span>1. Choose your event</span><span>2. Participant details</span><span>3. Secure payment</span></div>
             <iframe src={registrationUrl} title="Official Royals Run registration form" loading="eager" />
-            <p className="registration-fallback">Having trouble seeing the form? <a href={registrationUrl} target="_blank" rel="noreferrer">Open secure registration in a new tab ↗</a></p>
+            <p className="registration-fallback">Having trouble seeing the form? <a href={registrationUrl} target="_blank" rel="noreferrer" onClick={() => trackRegistrationIntent(selectedRace ?? undefined)}>Open secure registration in a new tab ↗</a></p>
           </div>
         </div>
       )}
