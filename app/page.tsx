@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const registrationUrl = "https://events.elitefeats.com/26royals#register-now";
+const registrationUrl = "https://events.elitefeats.com/26royals#registrant-0";
 const eventStart = new Date("2026-08-15T08:15:00-04:00");
 
 type Race = {
