@@ -24,6 +24,8 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--sun); outline-o
 
 .topline { min-height: 41px; display: flex; align-items: center; justify-content: center; gap: 9px; padding: 8px 24px; background: var(--sun); color: var(--ink); font-size: 12px; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; }
 .topline-dot { width: 7px; height: 7px; border-radius: 50%; background: #e54c29; box-shadow: 0 0 0 3px rgba(229,76,41,.18); }
+.topline-date { font-size: 14px; letter-spacing: .035em; }
+.topline-date strong { font-size: 17px; font-weight: 900; }
 .topline a { margin-left: 8px; border-bottom: 1px solid currentColor; }
 .topline a span { font-size: 15px; }
 .site-header { position: absolute; z-index: 10; top: 41px; left: 0; right: 0; height: 88px; max-width: 1320px; margin: auto; padding: 0 42px; display: flex; align-items: center; justify-content: space-between; color: #fff; }
@@ -65,9 +67,10 @@ h1 em, h2 em { font-family: var(--serif); font-weight: 400; letter-spacing: -.07
 .flyer-caption { position: absolute; bottom: -35px; left: -49px; right: -49px; padding: 12px 16px; color: var(--ink); background: var(--sun); box-shadow: 0 12px 23px rgba(1,18,57,.28); font-size: 11px; font-weight: 900; letter-spacing: .045em; text-align: center; text-transform: uppercase; transform: rotate(-6deg); }
 .flyer-caption span { margin-right: 5px; }
 .countdown { position: absolute; z-index: 2; bottom: 0; left: 50%; width: min(1130px, calc(100% - 88px)); min-height: 118px; display: flex; align-items: stretch; gap: 0; padding: 8px; color: var(--ink); background: rgba(255,253,248,.96); border: 1px solid rgba(255,255,255,.45); border-top: 4px solid var(--sun); border-radius: 8px 8px 0 0; transform: translateX(-50%); box-shadow: 0 18px 48px rgba(0,0,0,.24); backdrop-filter: blur(12px); }
-.countdown-intro { width: 214px; display: flex; flex-direction: column; justify-content: center; padding: 16px 22px; background: var(--ink); color: #fff; }
-.countdown-kicker { margin-bottom: 7px; color: #93bdf3; font-size: 9px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
-.countdown-label { font-size: 13px; font-weight: 900; letter-spacing: .1em; line-height: 1.3; text-transform: uppercase; }
+.countdown-intro { width: 226px; display: flex; flex-direction: column; justify-content: center; padding: 13px 22px; background: var(--ink); color: #fff; }
+.countdown-label { color: #93bdf3; font-size: 9px; font-weight: 900; letter-spacing: .12em; line-height: 1.2; text-transform: uppercase; }
+.countdown-date { margin: 4px 0 3px; color: var(--sun); font-size: 27px; line-height: 1; letter-spacing: -.045em; }
+.countdown-kicker { color: #fff; font-size: 9px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
 .countdown-unit { min-width: 82px; display: flex; flex: 1 1 0; flex-direction: column; align-items: center; justify-content: center; margin: 10px 0; border-left: 1px solid #dfe4eb; }
 .countdown-intro + .countdown-unit { border-left: 0; }
 .countdown b { min-width: 2.05ch; color: var(--ink); font-size: 34px; line-height: .9; letter-spacing: -.06em; text-align: center; font-variant-numeric: tabular-nums; }
@@ -236,6 +239,8 @@ footer p { margin: 0; text-align: right; text-transform: uppercase; }
 
 @media (max-width: 680px) {
   .topline { justify-content: flex-start; padding: 8px 16px; gap: 6px; font-size: 10px; }
+  .topline-date { font-size: 11px; }
+  .topline-date strong { font-size: 13px; }
   .topline a { display: none; }
   .site-header { top: 41px; height: 73px; padding: 0 18px; }
   .wordmark { font-size: 14px; }
@@ -254,8 +259,9 @@ footer p { margin: 0; text-align: right; text-transform: uppercase; }
   .flyer-caption { bottom: -28px; left: -30px; right: -30px; padding: 9px 7px; font-size: 8px; }
   .countdown { position: static; width: 100%; min-height: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; padding: 7px; border-width: 3px 0 0; border-radius: 0; transform: none; box-shadow: none; }
   .countdown-intro { grid-column: 1 / -1; width: auto; display: block; padding: 9px 10px 12px; text-align: center; }
-  .countdown-kicker { margin-bottom: 4px; font-size: 8px; }
-  .countdown-label { font-size: 10px; }
+  .countdown-label { font-size: 8px; }
+  .countdown-date { margin: 4px 0 3px; font-size: 25px; }
+  .countdown-kicker { font-size: 8px; }
   .countdown-unit { min-width: 0; margin: 4px 0; padding: 9px 1px; }
   .countdown-unit:first-of-type { border-left: 0; }
   .countdown b { font-size: 23px; }

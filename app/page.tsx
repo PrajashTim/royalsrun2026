@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const registrationUrl = "https://events.elitefeats.com/26royals";
+const registrationUrl = "https://events.elitefeats.com/26royals#register-now";
 const eventStart = new Date("2026-08-15T08:15:00-04:00");
 
 type Race = {
@@ -159,7 +159,7 @@ export default function Home() {
         <span className="topline-dot" aria-hidden="true" />
         <span>4th Annual Royals Run</span>
         <span className="topline-divider">•</span>
-        <span>Saturday, August 15, 2026</span>
+        <span className="topline-date">Saturday, <strong>August 15, 2026</strong></span>
         <a href="#race-day">Plan your race day <span aria-hidden="true">→</span></a>
       </div>
 
@@ -207,8 +207,9 @@ export default function Home() {
         </div>
         <div className="countdown" aria-label="Countdown to the race">
           <div className="countdown-intro">
-            <span className="countdown-kicker">August 15 · Burke Lake Park</span>
             <span className="countdown-label">Race day is coming</span>
+            <strong className="countdown-date">August 15</strong>
+            <span className="countdown-kicker">Burke Lake Park</span>
           </div>
           <div className="countdown-unit"><b>{String(countdown.days).padStart(2, "0")}</b><span>days</span></div>
           <div className="countdown-unit"><b>{String(countdown.hours).padStart(2, "0")}</b><span>hours</span></div>
