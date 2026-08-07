@@ -49,42 +49,74 @@ const galleryPhotos = [
   {
     src: "/images/gallery/run-2025-01.jpg",
     alt: "Royals Run start arch at Burke Lake Park",
-    className: "gallery-hero",
+  },
+  {
+    src: "/images/gallery/royals-community-04.jpg",
+    alt: "Royals Run runners and volunteers gathered for a group photo",
   },
   {
     src: "/images/gallery/run-2025-03.jpg",
     alt: "Royals Run participant approaching the finish",
-    className: "gallery-top",
+  },
+  {
+    src: "/images/gallery/royals-community-01.jpg",
+    alt: "Three Royals Run finishers wearing their medals",
   },
   {
     src: "/images/gallery/run-2025-finish-03.jpg",
     alt: "Royals Run participant running along the course",
-    className: "gallery-bottom",
+  },
+  {
+    src: "/images/gallery/royals-community-02.jpg",
+    alt: "Royals Run participant showing the event shirt",
   },
   {
     src: "/images/gallery/run-2025-finish-04.jpg",
     alt: "Royals Run finishers walking together",
-    className: "gallery-wide",
+  },
+  {
+    src: "/images/gallery/royals-community-03.jpg",
+    alt: "Royals Run volunteers celebrating together",
   },
   {
     src: "/images/gallery/run-2025-finish-05.jpg",
     alt: "Royals Run participant finishing with volunteers nearby",
-    className: "gallery-small",
   },
   {
-    src: "/images/gallery/run-2024-01.jpg",
-    alt: "Royals Run community gathering in 2024",
-    className: "gallery-tall",
+    src: "/images/gallery/royals-community-05.jpg",
+    alt: "Royals Run finishers celebrating with their medals",
   },
   {
-    src: "/images/gallery/run-2024-03.jpg",
-    alt: "Royals Run community stage at the 2024 event",
-    className: "gallery-stage",
+    src: "/images/gallery/royals-community-06.jpg",
+    alt: "Royals Run medal finisher waving at the camera",
   },
   {
-    src: "/images/gallery/run-2024-04.jpg",
-    alt: "Royals Run participants gathered before the race",
-    className: "gallery-group",
+    src: "/images/gallery/royals-community-07.jpg",
+    alt: "Young Royals Run volunteer at the event",
+  },
+  {
+    src: "/images/gallery/royals-community-08.jpg",
+    alt: "Families and runners posing with Royals Run medals",
+  },
+  {
+    src: "/images/gallery/royals-community-09.jpg",
+    alt: "Royals Run volunteer smiling along the course",
+  },
+  {
+    src: "/images/gallery/royals-community-10.jpg",
+    alt: "Young Royals Run participant on the race course",
+  },
+  {
+    src: "/images/gallery/royals-community-11.jpg",
+    alt: "Royals Run participant and volunteer near the finish area",
+  },
+  {
+    src: "/images/gallery/royals-community-12.jpg",
+    alt: "Royals Run finishers posing with their medals",
+  },
+  {
+    src: "/images/gallery/royals-community-13.jpg",
+    alt: "Royals Run community warming up together before the race",
   },
 ];
 
@@ -268,7 +300,13 @@ export default function Home() {
           </div>
         </div>
         <div className="gallery" aria-label="Photos from past Royals Run events">
-          {galleryPhotos.map((photo) => <img key={photo.src} className={photo.className} src={photo.src} alt={photo.alt} loading="lazy" />)}
+          <div className="gallery-grid">
+            {galleryPhotos.map((photo) => (
+              <figure className="gallery-photo" key={photo.src}>
+                <img src={photo.src} alt={photo.alt} loading="lazy" />
+              </figure>
+            ))}
+          </div>
           <a href="https://elitefeats.com/Gallery/?ID=24636" target="_blank" rel="noreferrer" className="gallery-link">View 2025 gallery <span aria-hidden="true">↗</span></a>
         </div>
       </section>

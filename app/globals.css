@@ -119,15 +119,12 @@ h1 em, h2 em { font-family: var(--serif); font-weight: 400; letter-spacing: -.07
 .experience-stats div { display: grid; grid-template-columns: 52px 1fr; align-items: baseline; gap: 10px; }
 .experience-stats b { color: var(--blue); font-size: 19px; letter-spacing: -.04em; }
 .experience-stats span { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .08em; }
-.gallery { position: relative; display: grid; grid-template-columns: 1.4fr .87fr .87fr; grid-template-rows: 190px 148px 175px; gap: 11px; min-height: 540px; padding: 0 12px 29px 0; }
-.gallery img { display: block; width: 100%; height: 100%; object-fit: cover; background: #d9e0e0; }
-.gallery-hero { grid-row: 1 / 3; grid-column: 1; }
-.gallery-top { grid-row: 1; grid-column: 2; }
-.gallery-bottom { grid-row: 2; grid-column: 2; }
-.gallery-wide { grid-column: 1 / 3; grid-row: 3; }
-.gallery-small { grid-column: 3; grid-row: 1 / 3; }
-.gallery-tall, .gallery-stage, .gallery-group { display: none !important; }
-.gallery-link { position: absolute; right: 0; bottom: 0; padding: 12px 16px; background: var(--sun); color: var(--ink); font-size: 11px; font-weight: 900; letter-spacing: .07em; text-transform: uppercase; }
+.gallery { min-width: 0; }
+.gallery-grid { columns: 2; column-gap: 12px; }
+.gallery-photo { margin: 0 0 12px; overflow: hidden; break-inside: avoid; background: #d9e0e0; }
+.gallery-photo img { display: block; width: 100%; height: auto; transition: transform .45s ease; }
+.gallery-photo:hover img { transform: scale(1.018); }
+.gallery-link { display: flex; width: max-content; align-items: center; gap: 10px; margin: 8px 0 0 auto; padding: 13px 17px; background: var(--sun); color: var(--ink); font-size: 11px; font-weight: 900; letter-spacing: .07em; text-transform: uppercase; }
 
 .race-day { padding-top: 151px; }
 .race-day-layout { display: grid; grid-template-columns: 1.05fr .85fr 1fr; gap: 15px; margin-top: 54px; }
@@ -228,7 +225,8 @@ footer p { margin: 0; text-align: right; text-transform: uppercase; }
   .section { padding: 96px 28px; }
   .race-card { min-height: 370px; padding: 22px; }
   .experience { gap: 34px; }
-  .gallery { grid-template-rows: 155px 124px 145px; }
+  .gallery-grid { column-gap: 10px; }
+  .gallery-photo { margin-bottom: 10px; }
   .race-day-layout { grid-template-columns: 1fr 1fr; }
   .pickup-card { grid-column: 1 / 3; min-height: auto; }
   .impact { gap: 42px; }
@@ -277,12 +275,10 @@ footer p { margin: 0; text-align: right; text-transform: uppercase; }
   .race-card { min-height: 292px; }
   .race-title { margin-top: 35px; }
   .experience { display: block; padding-top: 48px; }
-  .gallery { margin-top: 45px; grid-template-columns: 1.1fr .9fr; grid-template-rows: 160px 120px 118px; min-height: 410px; }
-  .gallery-hero { grid-column: 1; grid-row: 1 / 3; }
-  .gallery-top { grid-column: 2; grid-row: 1; }
-  .gallery-bottom { grid-column: 2; grid-row: 2; }
-  .gallery-wide { grid-column: 1 / 3; grid-row: 3; }
-  .gallery-small { display: none !important; }
+  .gallery { margin-top: 45px; }
+  .gallery-grid { column-gap: 7px; }
+  .gallery-photo { margin-bottom: 7px; }
+  .gallery-link { margin-top: 11px; padding: 12px 15px; }
   .race-day { padding-top: 81px; }
   .race-day-layout { grid-template-columns: 1fr; margin-top: 34px; }
   .schedule-card, .location-card, .pickup-card { min-height: auto; padding: 27px; }
