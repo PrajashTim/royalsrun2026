@@ -185,6 +185,8 @@ export default function Home() {
     setShowRegistration(true);
   };
 
+  const daysLabel = countdown.days === 1 ? "day" : "days";
+
   return (
     <main>
       <div className="topline">
@@ -214,6 +216,17 @@ export default function Home() {
       <section className="hero" id="top">
         <div className="hero-orb hero-orb-one" />
         <div className="hero-orb hero-orb-two" />
+        <div className="last-call-banner" aria-label="Registration is open for the Royals Run">
+          <div className="last-call-copy">
+            <span className="last-call-kicker"><span aria-hidden="true" /> Registration is open</span>
+            <p className="last-call-number"><b>{String(countdown.days).padStart(2, "0")}</b> <strong>{daysLabel}</strong> <em>to race day</em></p>
+            <p className="last-call-detail">Saturday, August 15 <span aria-hidden="true">·</span> Burke Lake Park</p>
+          </div>
+          <p className="last-call-note">Choose your distance now. If you register during the final 24 hours, your bib number will be sent by text.</p>
+          <button className="last-call-action" onClick={() => openRegistration()}>
+            Register now <span aria-hidden="true">→</span>
+          </button>
+        </div>
         <div className="hero-inner">
           <div className="hero-copy">
             <p className="eyebrow"><span aria-hidden="true">✦</span> Burke Lake Park · Fairfax Station, VA</p>
